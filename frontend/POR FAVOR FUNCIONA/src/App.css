@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lily+Script+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #127fea;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-family: "Inter", sans-serif;
+}
+
+
+.auth-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+}
+
+.auth-card {
+  width: 460px;
+  min-height: 590px;
+
+  background: white;
+
+  border-radius: 32px;
+
+  padding: 45px 50px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card h1 {
+  text-align: center;
+
+  color: #127fea;
+
+  font-family: "Lily Script One", cursive;
+
+  font-size: 42px;
+
+  margin: 10px 0 20px;
+}
+
+.auth-intro {
+  text-align: center;
+
+  color: #555;
+
+  font-size: 18px;
+
+  margin-bottom: 35px;
+}
+
+
+.input-box {
+  margin-bottom: 22px;
+}
+
+.input-box label {
+  display: block;
+
+  color: #333;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.input-box input {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  transition: 0.2s;
+}
+
+.input-box input:focus {
+  border-color: #127fea;
+
+  box-shadow: 0 0 0 3px rgba(18, 127, 234, 0.12);
+}
+
+.main-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #127fea;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.main-button:hover {
+  opacity: 0.9;
+
+  transform: translateY(-1px);
+}
+
+.main-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+.switch-page {
+  text-align: center;
+
+  margin-top: 25px;
+
+  color: #555;
+
+  font-size: 14px;
+}
+
+.switch-page a {
+  color: #127fea;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.switch-page a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #d93025;
+
+  background: #fff0f0;
+
+  border-radius: 8px;
+
+  padding: 10px;
+
+  margin-bottom: 15px;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+.dashboard {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+}
+
+.dashboard-card {
+  width: 500px;
+
+  background: white;
+
+  border-radius: 32px;
+
+  padding: 50px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card h1 {
+  color: #127fea;
+
+  margin-bottom: 15px;
+}
+
+.dashboard-card p {
+  color: #555;
+
+  margin-bottom: 15px;
+}
+
+.dashboard-card .main-button {
+  margin-top: 20px;
+}
+
+/* =========================
+   PAINEL DO USUÁRIO
+========================= */
+
+.painel-usuario {
+  min-height: 100vh;
+  background: #f5f9ff;
+  padding: 35px 50px;
+}
+
+.usuario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 50px;
+}
+
+.usuario-header h1 {
+  color: #127fea;
+
+  font-family: "Lily Script One", cursive;
+
+  font-size: 42px;
+}
+
+.usuario-header p {
+  color: #555;
+  margin-top: 5px;
+}
+
+.musicas h2 {
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.musicas-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  );
+
+  gap: 25px;
+}
+
+.musica-card {
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s;
+}
+
+.musica-card:hover {
+  transform: translateY(-4px);
+}
+
+.capa-musica {
+  width: 100%;
+  aspect-ratio: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #eaf4ff;
+
+  border-radius: 15px;
+
+  font-size: 60px;
+
+  margin-bottom: 15px;
+}
+
+.musica-card h3 {
+  color: #222;
+
+  margin-bottom: 5px;
+}
+
+.musica-card p {
+  color: #777;
+
+  margin-bottom: 18px;
+}
+
+.play-button {
+  width: 100%;
+
+  padding: 11px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #127fea;
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.play-button:hover {
+  opacity: 0.9;
+}
