@@ -17,6 +17,9 @@ input {
   font-family: "Inter", sans-serif;
 }
 
+/* =========================
+   PÁGINA DE AUTENTICAÇÃO
+========================= */
 
 .auth-page {
   min-height: 100vh;
@@ -25,21 +28,60 @@ input {
   justify-content: center;
   align-items: center;
 
-  padding: 30px;
+  padding: 40px 20px;
 }
+
+/* =========================
+   CARD
+========================= */
 
 .auth-card {
-  width: 460px;
-  min-height: 590px;
+  width: 760px;
 
   background: white;
-
   border-radius: 32px;
 
-  padding: 45px 50px;
+  padding: 42px 55px;
 
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  /* Scroll dentro do card */
+  max-height: 90vh;
+  overflow-y: auto;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #127fea transparent;
 }
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+/* Chrome / Edge / Safari */
+
+.auth-card::-webkit-scrollbar {
+  width: 2px;
+}
+
+.auth-card::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 30px 0;
+}
+
+.auth-card::-webkit-scrollbar-thumb {
+  background: #127fea;
+  border-radius: 999px;
+}
+
+.auth-card::-webkit-scrollbar-thumb:hover {
+  background: #0d6fd1;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
 
 .auth-card h1 {
   text-align: center;
@@ -50,7 +92,7 @@ input {
 
   font-size: 42px;
 
-  margin: 10px 0 20px;
+  margin: 5px 0 12px;
 }
 
 .auth-intro {
@@ -58,14 +100,41 @@ input {
 
   color: #555;
 
-  font-size: 18px;
+  font-size: 17px;
 
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 
+/* =========================
+   LINHAS DO FORMULÁRIO
+========================= */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+/* Bairro + Cidade + Estado */
+
+.address-row {
+  display: grid;
+
+  grid-template-columns: 1.2fr 1.2fr 0.6fr;
+
+  gap: 20px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
 .input-box {
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .input-box label {
@@ -74,15 +143,18 @@ input {
   color: #333;
 
   font-size: 14px;
+
   font-weight: 600;
 
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .input-box input {
   width: 100%;
 
-  padding: 14px 16px;
+  height: 46px;
+
+  padding: 12px 15px;
 
   border: 1px solid #ddd;
 
@@ -90,7 +162,11 @@ input {
 
   outline: none;
 
-  font-size: 15px;
+  font-size: 14px;
+
+  color: #333;
+
+  background: white;
 
   transition: 0.2s;
 }
@@ -98,15 +174,67 @@ input {
 .input-box input:focus {
   border-color: #127fea;
 
-  box-shadow: 0 0 0 3px rgba(18, 127, 234, 0.12);
+  box-shadow:
+    0 0 0 3px rgba(18, 127, 234, 0.12);
 }
+
+/* =========================
+   CAMPOS DO VIA CEP
+========================= */
+
+.input-box input[readonly] {
+  background: #f5f8fc;
+
+  color: #666;
+
+  cursor: default;
+}
+
+
+/* =========================
+   TÍTULO ADDRESS
+========================= */
+
+.endereco-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 8px 0 20px;
+
+  color: #127fea;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.endereco-title::after {
+  content: "";
+
+  height: 1px;
+
+  flex: 1;
+
+  background: #e5e5e5;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
 
 .main-button {
   width: 100%;
 
-  padding: 14px;
+  height: 48px;
+
+  margin-top: 5px;
 
   border: none;
+
   border-radius: 10px;
 
   background: #127fea;
@@ -114,6 +242,7 @@ input {
   color: white;
 
   font-size: 16px;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -135,76 +264,36 @@ input {
   transform: none;
 }
 
+
 /* =========================
-   LOGIN COM GOOGLE
+   ERRO
 ========================= */
 
-.login-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 22px 0;
-  color: #888;
+.error-message {
+  color: #d93025;
+
+  background: #fff0f0;
+
+  border-radius: 8px;
+
+  padding: 10px;
+
+  margin-bottom: 15px;
+
   font-size: 14px;
+
+  text-align: center;
 }
 
-.login-divider::before,
-.login-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #ddd;
-}
 
-.login-with-google {
-  width: 100%;
-  height: 48px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-
-  background: #fff;
-  color: #333;
-
-  border: 1px solid #ddd;
-  border-radius: 10px;
-
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-
-  cursor: pointer;
-
-  transition: 0.2s ease;
-}
-
-.login-with-google:hover {
-  background: #f8f8f8;
-  border-color: #c8c8c8;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
-}
-
-.login-with-google:active {
-  transform: translateY(0);
-}
-
-.google-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.google-icon i {
-  font-size: 18px;
-}
+/* =========================
+   LINK PARA LOGIN
+========================= */
 
 .switch-page {
   text-align: center;
 
-  margin-top: 25px;
+  margin-top: 22px;
 
   color: #555;
 
@@ -223,170 +312,129 @@ input {
   text-decoration: underline;
 }
 
-.error-message {
-  color: #d93025;
-
-  background: #fff0f0;
-
-  border-radius: 8px;
-
-  padding: 10px;
-
-  margin-bottom: 15px;
-
-  font-size: 14px;
-
-  text-align: center;
-}
-
-.dashboard {
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 30px;
-}
-
-.dashboard-card {
-  width: 500px;
-
-  background: white;
-
-  border-radius: 32px;
-
-  padding: 50px;
-
-  text-align: center;
-
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.dashboard-card h1 {
-  color: #127fea;
-
-  margin-bottom: 15px;
-}
-
-.dashboard-card p {
-  color: #555;
-
-  margin-bottom: 15px;
-}
-
-.dashboard-card .main-button {
-  margin-top: 20px;
-}
 
 /* =========================
-   PAINEL DO USUÁRIO
+   LOGIN COM GOOGLE
 ========================= */
 
-.painel-usuario {
-  min-height: 100vh;
-  background: #f5f9ff;
-  padding: 35px 50px;
-}
-
-.usuario-header {
+.login-divider {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
 
-  margin-bottom: 50px;
+  gap: 12px;
+
+  margin: 22px 0;
+
+  color: #888;
+
+  font-size: 14px;
 }
 
-.usuario-header h1 {
-  color: #127fea;
+.login-divider::before,
+.login-divider::after {
+  content: "";
 
-  font-family: "Lily Script One", cursive;
+  flex: 1;
 
-  font-size: 42px;
+  height: 1px;
+
+  background: #ddd;
 }
 
-.usuario-header p {
-  color: #555;
-  margin-top: 5px;
-}
+.login-with-google {
+  width: 100%;
 
-.musicas h2 {
-  color: #222;
-  margin-bottom: 25px;
-}
+  height: 48px;
 
-.musicas-grid {
-  display: grid;
+  display: flex;
 
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  );
+  align-items: center;
 
-  gap: 25px;
-}
+  justify-content: center;
 
-.musica-card {
+  gap: 12px;
+
   background: white;
 
-  border-radius: 20px;
+  color: #333;
 
-  padding: 20px;
+  border: 1px solid #ddd;
 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-
-  transition: 0.2s;
-}
-
-.musica-card:hover {
-  transform: translateY(-4px);
-}
-
-.capa-musica {
-  width: 100%;
-  aspect-ratio: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: #eaf4ff;
-
-  border-radius: 15px;
-
-  font-size: 60px;
-
-  margin-bottom: 15px;
-}
-
-.musica-card h3 {
-  color: #222;
-
-  margin-bottom: 5px;
-}
-
-.musica-card p {
-  color: #777;
-
-  margin-bottom: 18px;
-}
-
-.play-button {
-  width: 100%;
-
-  padding: 11px;
-
-  border: none;
   border-radius: 10px;
 
-  background: #127fea;
-  color: white;
+  font-family: "Inter", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 500;
 
   cursor: pointer;
 
-  font-weight: 600;
+  transition: 0.2s ease;
 }
 
-.play-button:hover {
-  opacity: 0.9;
+.login-with-google:hover {
+  background: #f8f8f8;
+
+  border-color: #c8c8c8;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transform: translateY(-1px);
+}
+
+.login-with-google:active {
+  transform: translateY(0);
+}
+
+.google-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 700px) {
+
+  .auth-page {
+    padding: 25px 15px;
+
+    align-items: flex-start;
+  }
+
+  .auth-card {
+    width: 100%;
+
+    padding: 35px 25px;
+
+    border-radius: 24px;
+
+    max-height: none;
+
+    overflow-y: visible;
+  }
+
+  .form-row,
+  .address-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .auth-card h1 {
+    font-size: 36px;
+  }
+
+  .auth-intro {
+    font-size: 16px;
+  }
+
 }
