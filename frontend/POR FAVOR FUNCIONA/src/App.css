@@ -135,6 +135,71 @@ input {
   transform: none;
 }
 
+/* =========================
+   LOGIN COM GOOGLE
+========================= */
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.login-with-google {
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  background: #fff;
+  color: #333;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.login-with-google:hover {
+  background: #f8f8f8;
+  border-color: #c8c8c8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.login-with-google:active {
+  transform: translateY(0);
+}
+
+.google-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-icon i {
+  font-size: 18px;
+}
 
 .switch-page {
   text-align: center;

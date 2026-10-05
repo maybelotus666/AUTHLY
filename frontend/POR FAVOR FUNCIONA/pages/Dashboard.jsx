@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
-
 import PainelUsuario from "../components/PainelUsuario";
-// import PainelAdmin from "../components/painelAdmin";
+
 
 function Dashboard() {
   const navigate = useNavigate();
